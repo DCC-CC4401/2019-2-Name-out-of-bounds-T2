@@ -5,10 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>TestLP</title>
-    <meta name="" content="">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+<style type="text/css">
+</style>
 </head>
 
 <body>
@@ -41,9 +43,9 @@
         </div>
     </div>
     <div class="row">
-        <div class = "col-1">
+        <div class = "col-1" id = "test2">
         </div>
-        <div class = "col-3">
+        <div class = "col-3" id="test1">
             <button class="btn btn-light"><img class="float-left" src="assets/img/comprobado.png"></button>
             <button class="btn btn-light"><img class="float mx-auto d-block" src="assets/img/pausa.png"></button>
             <button class="btn btn-light"><img class="float-right" src="assets/img/boton-x.png"></button>
@@ -522,7 +524,44 @@
   </div>
  </div>
 </div>
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="500">
+  <tbody align="center" style="vertical-align:super;">
+    <tr>
+	  <td><div style="vertical-align:sub">25</div><div class="barrasv" style="height:31.6px; background-color:#BDDA4C">&nbsp;</div></td>
+	  <td valign="bottom"><div style="vertical-align:text-bottom">40</div><div class="barrasv" style="height:43.5px; background-color:#FF9A68">&nbsp;</div></td>
+	  <td valign="bottom"><div style="vertical-align:text-top">15</div><div class="barrasv" style="height:15.8px; background-color:#69ABBF">&nbsp;</div></td>
+	  <td valign="bottom"><div style="vertical-align:text-bottom">2</div><div class="barrasv" style="height:1.9px; background-color:#FFDE68">&nbsp;</div></td>
+	  <td valign="bottom"><div style="vertical-align:text-top">7</div><div class="barrasv" style="height:6.9px; background-color:#AB6487">&nbsp;</div></td>
+    </tr>
+    <tr>
+	  <td class="bordetd">31.6%</td>
+	  <td class="bordetd">43.5%</td>
+	  <td class="bordetd">15.8%</td>
+	  <td class="bordetd">1.9%</td>
+	  <td class="bordetd">6.9%</td>
+    </tr>
+    <tr id="etiq">
+	  <td><div class="verticalmente">Productos Varios</div></td>
+	  <td><div class="verticalmente">Repuestos de Vehculos</div></td>
+	  <td><div class="verticalmente">Enceres</div></td>
+	  <td><div class="verticalmente">Bienes Muebles</div></td>
+	  <td><div class="verticalmente">Bienes Inmuebles</div></td>
+    </tr>
+  </tbody>
+</table>
 
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+<div id="plotlyChart"></div> 
+<script> 
+    var data = [ 
+        {
+            x: ['javascript', 'python', '.net', 'ruby'],
+            y: [60, 24, 53, 16], 
+            type: 'bar' 
+        } 
+    ]; 
+    Plotly.newPlot('plotlyChart', data); 
+</script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
