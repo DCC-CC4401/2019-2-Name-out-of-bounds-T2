@@ -17,28 +17,24 @@
 <script>document.getElementsByTagName("html")[0].className += " js";</script>
 </head>
 
-<body><div class = "col-xl-12">
-<nav class="navbar navbar-light navbar-expand-md">
-    <div class="container-fluid"><a class="navbar-brand" href="#"><strong>Name</strong></a><button data-toggle="collapse" class="navbar-toggler"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li><button class="btn btn-default"><img src="assets/img/usuario.png" width="20" /></button></li>
-                    <li><button class="btn btn-primary" type="button">Log Out</button></li>
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" style="margin: -2px;padding: 0px;">
+        <div class="container-fluid"><a class="navbar-brand" href="#">Name</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-2">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="font-size: 15px;">Inicio</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-</div>
-    <div style="background-color: #d6e2eb;margin: 50px;">
+            </div><button class="btn btn-primary" type="button" style="width: 51px;height: 35px;background-color: rgb(248,248,248);"><img src="assets/img/usuario.png" style="width: 23px;"></button><button class="btn btn-primary" type="button" style="height: 35px;background-color: #a5e0e0;font-size: 18px;">Log Out</button></div>
+    </nav>
+    <div style="background-color: #d6e2eb;margin: 50px;padding: 30px;">
         <div class="container">
             <div class="row" style="margin: 10px 0px;">
                 <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
                     <div class="border rounded-0 d-xl-flex justify-content-xl-start align-items-xl-end" style="margin: 30px;padding: 5px;background-color: #da7c7c;width: 275px;height: 283px;"><img src="assets/img/doge.png" style="height: 300px;"><button class="btn btn-primary" type="button" style="opacity: 0.40;padding: 5px;margin: 0px 0px 0px -35px;"><img src="assets/img/cameraIcon.png" style="width: 50px;"></button></div>
                 </div>
-                <div class="col">
-                    <div class="table-responsive table-bordered bg-light border rounded-0" style="background-color: #acc1d5;margin: 50px 10px 10px 10px;">
+                <div class="col text-right">
+                    <div class="table-responsive table-bordered text-left bg-light border rounded-0" style="background-color: #acc1d5;margin: 50px 10px 10px 10px;">
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr></tr>
@@ -58,20 +54,18 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
+                    </div><button class="btn btn-primary text-left border rounded" type="button" style="height: 37px;width: 37px;padding: 0px 0px 0px 0px;"><i class="fa fa-pencil-square-o border rounded-0" style="height: 29px;margin: 0;padding: 0px 0px 0px 0px;font-size: 30px;width: 31px;"></i></button></div>
             </div>
             <div class="row" style="background-color: #73b5a5;">
                 <div class="col" style="background-color: #63aea5;margin: 30px;">
                     <div>
                         <ul class="nav nav-tabs">
-                            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-1">Amigos<img></a></li>
-                            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2">Solicitudes<img></a></li>
-                            <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-3">Buscador<img></a></li>
+                            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-1" style="font-size: 20px;color: rgb(0,0,0);">Amigos<img></a></li>
+                            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2" style="font-size: 20px;color: rgb(0,0,0);">Solicitudes<img></a></li>
+                            <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-3" style="color: rgb(0,0,0);font-size: 20px;">Buscador<img></a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane" role="tabpanel" id="tab-1" style="padding: 20px;">
-                                <p>Content for tab 1.</p>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -85,24 +79,23 @@
                                             <tr>
                                                 <td>Cell 1</td>
                                                 <td>Cell 2</td>
-                                                <td>X</td>
+                                                <td><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;">Eliminar</button></td>
                                             </tr>
                                             <tr>
                                                 <td>Cell 3</td>
                                                 <td>Cell 4</td>
-                                                <td>X</td>
+                                                <td><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;">Eliminar</button></td>
                                             </tr>
                                             <tr>
                                                 <td>Text</td>
                                                 <td>Text</td>
-                                                <td>X</td>
+                                                <td><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;">Eliminar</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="tab-2" style="padding: 20px;">
-                                <p>Content for tab 2.</p>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -116,25 +109,23 @@
                                             <tr>
                                                 <td>Cell 1</td>
                                                 <td>Cell 2</td>
-                                                <td>X</td>
+                                                <td><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;margin: 0px 10px;">Aceptar</button><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;">Eliminar</button></td>
                                             </tr>
                                             <tr>
                                                 <td>Cell 3</td>
                                                 <td>Cell 4</td>
-                                                <td>X</td>
+                                                <td><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;margin: 0px 10px;">Aceptar</button><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;">Eliminar</button></td>
                                             </tr>
                                             <tr>
                                                 <td>Text</td>
                                                 <td>Text</td>
-                                                <td>X</td>
+                                                <td><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;margin: 0px 10px;">Aceptar</button><button class="btn btn-primary" type="button" style="width: 57px;height: 26px;background-color: #b9e9ef;">Eliminar</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div class="tab-pane active" role="tabpanel" id="tab-3" style="padding: 20px;"><input type="text"><button class="btn btn-primary" type="button">Buscar</button>
-                                <p>Content for tab 3.</p>
-                            </div>
+                            <div class="tab-pane active" role="tabpanel" id="tab-3" style="padding: 20px;"><input type="text" style="width: 133px;height: 30px;"><button class="btn btn-primary" type="button" style="height: 30px;background-color: #b2e0d8;">Buscar</button></div>
                         </div>
                     </div>
                 </div>
@@ -145,7 +136,7 @@
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
-                                    <th>Atributo1</th>
+                                    <th>Categoría</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -164,15 +155,6 @@
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-light navbar-expand-md">
-        <div class="container-fluid"><a class="navbar-brand" href="#">Name</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-2">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Inicio</a></li>
-                </ul>
-            </div><button class="btn btn-primary" type="button" style="width: 51px;height: 35px;background-color: rgb(248,248,248);"><img src="assets/img/usuario.png" style="width: 23px;"></button><button class="btn btn-primary" type="button">Log Out</button></div>
-    </nav>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/chart.min.js"></script>
