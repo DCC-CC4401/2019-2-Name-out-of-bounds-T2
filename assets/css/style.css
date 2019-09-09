@@ -3747,6 +3747,18 @@ mark {
   --cd-color-event-5-h: 120;
   --cd-color-event-5-s: 60%;
   --cd-color-event-5-l: 85%;
+  --cd-color-event-6: hsl(240, 45%, 40%);
+  --cd-color-event-6-h: 240;
+  --cd-color-event-6-s: 45%;
+  --cd-color-event-6-l: 40%;
+  --cd-color-event-7:hsl(120, 80%, 30%);
+  --cd-color-event-7-h: 120;
+  --cd-color-event-7-s: 45%;
+  --cd-color-event-7-l: 30%;
+  --cd-color-event-8: hsl(60, 65%, 40%);
+  --cd-color-event-8-h: 60;
+  --cd-color-event-8-s: 65%;
+  --cd-color-event-8-l: 50%;
   --cd-color-text: hsl(0, 0%, 13%);
   --cd-color-text-h: 0;
   --cd-color-text-s: 0%;
@@ -4113,6 +4125,21 @@ a {
 .cd-schedule__event [data-event="event-5"], .cd-schedule-modal[data-event="event-5"] .cd-schedule-modal__header-bg {
   background: hsl(315, 60%, 85%);
   background: var(--cd-color-event-5);
+}
+
+.cd-schedule__event [data-event="event-6"], .cd-schedule-modal[data-event="event-6"] .cd-schedule-modal__header-bg {
+  background: hsl(240, 45%, 40%);
+  background: var(--cd-color-event-6);
+}
+
+.cd-schedule__event [data-event="event-7"], .cd-schedule-modal[data-event="event-7"] .cd-schedule-modal__header-bg {
+  background: hsl(120, 80%, 30%);
+  background: var(--cd-color-event-7);
+}
+
+.cd-schedule__event [data-event="event-8"], .cd-schedule-modal[data-event="event-8"] .cd-schedule-modal__header-bg {
+  background: hsl(60, 65%, 40%);
+  background: var(--cd-color-event-8);
 }
 
 .cd-schedule-modal {
