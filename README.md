@@ -1,7 +1,7 @@
 # 2019-2-Name-out-of-bounds-T2 
 ## Integrantes:
 - Valentina Aravena
-- Felipe Ortuzar
+- Felipe Ortúzar
 - José Pacheco
 - Tomás Torres
 ## Cuerpo Docente:
@@ -18,4 +18,4 @@
 
 Se puede observar estos prototipos en la carpeta denominada HTML, en ella se encuentra cada página con su respectiva derivación a los distintos enlaces.
 
-También en el archivo principal, se encuentran los distintos diseños utilizados en la creación de estos prototipos en formato .bsdesign para poder hacer modificaciones a través de Bootstraps.
+También en el archivo principal, se encuentran los distintos diseños utilizados en la creación de estos prototipos en formato .bsdesign para poder hacer modificaciones a través de Bootstrap.
