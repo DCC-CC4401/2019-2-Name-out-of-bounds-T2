@@ -12,9 +12,102 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/style.compiled.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
 </style>
 <script>document.getElementsByTagName("html")[0].className += " js";</script>
+<script type="text/javascript">
+  window.onload = function () {
+  
+  var chart = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    title:{
+      text: "Horas en actividades en la semana"
+    },
+    axisY: {
+      title: "Horas"
+    },
+    legend: {
+      cursor:"Actividad",
+      itemclick : toggleDataSeries
+    },
+    toolTip: {
+      shared: true,
+      content: toolTipFormatter
+    },
+    data: [{
+      type: "bar",
+      showInLegend: true,
+      name: "Mis actividades",
+      color: "gold",
+      dataPoints: [
+        { y: 7, label: "Jugar" },
+        { y: 3, label: "Estudiar" },
+        { y: 30, label: "Dormir" },
+        { y: 15, label: "Viajar" },
+        { y: 5, label: "Sociabilizar" },
+        { y: 10, label: "Ir a clase" }
+      ]
+    },
+    {
+      type: "bar",
+      showInLegend: true,
+      name: "Promedio Amigos",
+      color: "silver",
+      dataPoints: [
+        { y: 10, label: "Jugar" },
+        { y: 10, label: "Estudiar" },
+        { y: 30, label: "Dormir" },
+        { y: 8, label: "Viajar" },
+        { y: 5, label: "Sociabilizar" },
+        { y: 15, label: "Ir a clase" }
+      ]
+    },
+    {
+        type: "error",
+        name: "Desviación Estándar",
+        color: "red",
+        toolTipContent: "<span style=\"color:#C0504E\">{name}</span>: {y[0]} - {y[1]}",
+        dataPoints: [
+        { y: [8,12], label: "Jugar" },
+        { y: [8,11], label: "Estudiar" },
+        { y: [25,40], label: "Dormir" },
+        { y: [6,9], label: "Viajar" },
+        { y: [3,6], label: "Sociabilizar" },
+        { y: [12,16], label: "Ir a clase" }
+        ]
+    },
+    ]
+  });
+  chart.render();
+  
+  function toolTipFormatter(e) {
+    var str = "";
+    var total = 0 ;
+    var str3;
+    var str2 ;
+    for (var i = 0; i < e.entries.length; i++){
+      var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
+      total = e.entries[i].dataPoint.y + total;
+      str = str.concat(str1);
+    }
+    str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
+    str3 = "<span style = \"color:Tomato\">Total: </span><strong>" + total + "</strong><br/>";
+    return (str2.concat(str)).concat(str3);
+  }
+  
+  function toggleDataSeries(e) {
+    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+      e.dataSeries.visible = false;
+    }
+    else {
+      e.dataSeries.visible = true;
+    }
+    chart.render();
+  }
+  
+  }
+  </script>
 </head>
 
 <body>
@@ -37,7 +130,8 @@
         </div>
         <div>
             <p class= "col-0">
-                Descripción: Segmentation fault ... no conozco fonts bonitos uwu
+                <h1>Actualmente no estas registrando alguna actividad</h1>
+                <td><button class="btn btn-primary" type="button" style="width: 80px;height: 36px;background-color: #b9e9ef;">Registrar</button></td>
             </p>
         </div>
     </div>
@@ -51,252 +145,176 @@
         </div>
     </div>
 </div>
-    <div><canvas data-bs-chart="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot;4500&quot;,&quot;5300&quot;,&quot;6250&quot;,&quot;7800&quot;,&quot;9800&quot;,&quot;15000&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas></div><header class="cd-main-header text-center flex flex-column flex-center">
-
-    <h1 class="text-xl">Schedule Template</h1>
-  </header>
+    
+<div class="container justify-content-center p-4" style="margin: 0px 750px"> 
+    <h1 class="text-xl justify-content-center" style="font-size: 30px"> <i class="material-icons" style="margin: 0px -70px">arrow_backward</i>Actividades semanales <i class="material-icons" style="margin: 0px 15px">arrow_forward</i></h1>
+</div>
 
   <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
     <div class="cd-schedule__timeline">
       <ul>
         <li><span>00:00</span></li>
-        <li><span>00:30</span></li>
         <li><span>01:00</span></li>
-        <li><span>01:30</span></li>
         <li><span>02:00</span></li>
-        <li><span>02:30</span></li>
         <li><span>03:00</span></li>
-        <li><span>03:30</span></li>
         <li><span>04:00</span></li>
-        <li><span>04:30</span></li>
         <li><span>05:00</span></li>
-        <li><span>05:30</span></li>
         <li><span>06:00</span></li>
-        <li><span>06:30</span></li>
         <li><span>07:00</span></li>
-        <li><span>07:30</span></li>
         <li><span>08:00</span></li>
-        <li><span>08:30</span></li>
         <li><span>09:00</span></li>
-        <li><span>09:30</span></li>
         <li><span>10:00</span></li>
-        <li><span>10:30</span></li>
         <li><span>11:00</span></li>
-        <li><span>11:30</span></li>
         <li><span>12:00</span></li>
-        <li><span>12:30</span></li>
         <li><span>13:00</span></li>
-        <li><span>13:30</span></li>
         <li><span>14:00</span></li>
-        <li><span>14:30</span></li>
         <li><span>15:00</span></li>
-        <li><span>15:30</span></li>
         <li><span>16:00</span></li>
-        <li><span>16:30</span></li>
         <li><span>17:00</span></li>
-        <li><span>17:30</span></li>
         <li><span>18:00</span></li>
-        <li><span>18:30</span></li>
         <li><span>19:00</span></li>
-        <li><span>19:30</span></li>
         <li><span>20:00</span></li>
-        <li><span>20:30</span></li>
         <li><span>21:00</span></li>
-        <li><span>21:30</span></li>
         <li><span>22:00</span></li>
-        <li><span>22:30</span></li>
         <li><span>23:00</span></li>
-        <li><span>23:30</span></li>
       </ul>
     </div> <!-- .cd-schedule__timeline -->
   
     <div class="cd-schedule__events">
       <ul>
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>Monday</span></div>
+          <div class="cd-schedule__top-info"><span>Lunes</span></div>
   
           <ul>
             <li class="cd-schedule__event">
-              <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                <em class="cd-schedule__name">Abs Circuit</em>
+              <a data-start="00:00" data-end="7:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                <em class="cd-schedule__name">Dormir</em>
               </a>
             </li>
   
             <li class="cd-schedule__event">
-              <a data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2" href="#0">
-                <em class="cd-schedule__name">Rowing Workout</em>
+              <a data-start="08:30" data-end="18:30" data-content="event-rowing-workout" data-event="event-2" href="#0">
+                <em class="cd-schedule__name">Clases</em>
               </a>
             </li>
   
             <li class="cd-schedule__event">
-              <a data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                <em class="cd-schedule__name">Yoga Level 1</em>
+              <a data-start="19:00" data-end="21:30"  data-content="event-yoga-1" data-event="event-3" href="#0">
+                <em class="cd-schedule__name">Rankear</em>
+              </a>
+            </li>
+
+
+
+          </ul>
+        </li>
+  
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Martes</span></div>
+  
+          <ul>
+            <li class="cd-schedule__event">
+              <a data-start="00:00" data-end="6:00"  data-content="event-abs-circuit" data-event="event-1" href="#0">
+                <em class="cd-schedule__name">Dormir</em>
+              </a>
+            </li>
+  
+            <li class="cd-schedule__event">
+              <a data-start="06:30" data-end="7:30"  data-content="event-restorative-yoga" data-event="event-4" href="#0">
+                <em class="cd-schedule__name">Correr</em>
+              </a>
+            </li>
+  
+            <li class="cd-schedule__event">
+              <a data-start="8:30" data-end="15:00" data-content="event-abs-circuit" data-event="event-2" href="#0">
+                <em class="cd-schedule__name">Clases</em>
+              </a>
+            </li>
+  
+            <li class="cd-schedule__event">
+              <a data-start="15:45" data-end="17:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
+                <em class="cd-schedule__name">Futbol</em>
+              </a>
+            </li>
+
+            <li class="cd-schedule__event">
+                <a data-start="18:30" data-end="22:00"  data-content="event-yoga-1" data-event="event-5" href="#0">
+                  <em class="cd-schedule__name">Estudiar</em>
+                </a>
+            </li>
+          </ul>
+        </li>
+  
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Miercoles</span></div>
+  
+          <ul>
+            <li class="cd-schedule__event">
+              <a data-start="00:00" data-end="10:15" data-content="event-restorative-yoga" data-event="event-1" href="#0">
+                <em class="cd-schedule__name">Dormir</em>
+              </a>
+            </li>
+  
+            <li class="cd-schedule__event">
+              <a data-start="11:30" data-end="15:00" data-content="event-yoga-1" data-event="event-2" href="#0">
+                <em class="cd-schedule__name">Clases</em>
+              </a>
+            </li>
+  
+            <li class="cd-schedule__event">
+              <a data-start="15:15" data-end="16:00"  data-content="event-rowing-workout" data-event="event-1" href="#0">
+                <em class="cd-schedule__name">Siesta</em>
+              </a>
+            </li>
+  
+            <li class="cd-schedule__event">
+              <a data-start="16:30" data-end="22:00" data-content="event-yoga-1" data-event="event-3" href="#0">
+                <em class="cd-schedule__name">Rankear</em>
               </a>
             </li>
           </ul>
         </li>
   
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>Tuesday</span></div>
-  
+          <div class="cd-schedule__top-info"><span>Jueves</span></div>
           <ul>
-            <li class="cd-schedule__event">
-              <a data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                <em class="cd-schedule__name">Rowing Workout</em>
+          <li class="cd-schedule__event">
+              <a data-start="00:00" data-end="8:15" data-content="event-restorative-yoga" data-event="event-1" href="#0">
+                <em class="cd-schedule__name">Dormir</em>
               </a>
             </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="11:30" data-end="13:00"  data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                <em class="cd-schedule__name">Restorative Yoga</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="13:30" data-end="15:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                <em class="cd-schedule__name">Abs Circuit</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                <em class="cd-schedule__name">Yoga Level 1</em>
+
+          <li class="cd-schedule__event">
+              <a data-start="10:30" data-end="17:30" data-content="event-yoga-1" data-event="event-6" href="#0">
+                <em class="cd-schedule__name">Sociabilizar</em>
               </a>
             </li>
           </ul>
         </li>
   
         <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>Wednesday</span></div>
-  
+          <div class="cd-schedule__top-info"><span>Viernes</span></div>
           <ul>
-            <li class="cd-schedule__event">
-              <a data-start="09:00" data-end="10:15" data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                <em class="cd-schedule__name">Restorative Yoga</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="10:45" data-end="11:45" data-content="event-yoga-1" data-event="event-3" href="#0">
-                <em class="cd-schedule__name">Yoga Level 1</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="12:00" data-end="13:45"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                <em class="cd-schedule__name">Rowing Workout</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="13:45" data-end="15:00" data-content="event-yoga-1" data-event="event-3" href="#0">
-                <em class="cd-schedule__name">Yoga Level 1</em>
-              </a>
-            </li>
-          </ul>
-        </li>
-  
-        <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>Thursday</span></div>
-  
-          <ul>
-            <li class="cd-schedule__event">
-              <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                <em class="cd-schedule__name">Abs Circuit</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="12:00" data-end="13:45" data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                <em class="cd-schedule__name">Restorative Yoga</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="15:30" data-end="16:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                <em class="cd-schedule__name">Abs Circuit</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="17:00" data-end="18:30"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                <em class="cd-schedule__name">Rowing Workout</em>
-              </a>
-            </li>
-          </ul>
-        </li>
-  
-        <li class="cd-schedule__group">
-          <div class="cd-schedule__top-info"><span>Friday</span></div>
-  
-          <ul>
-            <li class="cd-schedule__event">
-              <a data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                <em class="cd-schedule__name">Rowing Workout</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                <em class="cd-schedule__name">Abs Circuit</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                <em class="cd-schedule__name">Yoga Level 1</em>
-              </a>
-            </li>
+              <li class="cd-schedule__event">
+                  <a data-start="00:00" data-end="4:15" data-content="event-restorative-yoga" data-event="event-1" href="#0">
+                    <em class="cd-schedule__name">Dormir</em>
+                  </a>
+                </li>
+
+              <li class="cd-schedule__event">
+                  <a data-start="6:00" data-end="23:30" data-content="event-yoga-1" data-event="event-7" href="#0">
+                    <em class="cd-schedule__name">Viajar</em>
+                  </a>
+                </li>
           </ul>
         </li>
         <li class="cd-schedule__group">
           <div class="cd-schedule__top-info"><span>Sabado</span></div>
-  
-          <ul>
-            <li class="cd-schedule__event">
-              <a data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                <em class="cd-schedule__name">Rowing Workout</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                <em class="cd-schedule__name">Abs Circuit</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                <em class="cd-schedule__name">Yoga Level 1</em>
-              </a>
-            </li>
-          </ul>
         </li>
           
         <li class="cd-schedule__group">
           <div class="cd-schedule__top-info"><span>Domingo</span></div>
   
-          <ul>
-            <li class="cd-schedule__event">
-              <a data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                <em class="cd-schedule__name">Rowing Workout</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                <em class="cd-schedule__name">Abs Circuit</em>
-              </a>
-            </li>
-  
-            <li class="cd-schedule__event">
-              <a data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                <em class="cd-schedule__name">Yoga Level 1</em>
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
     </div>
   
     <div class="cd-schedule-modal">
@@ -320,13 +338,14 @@
     <div class="cd-schedule__cover-layer"></div>
   </div> <!-- .cd-schedule -->
 
+  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
   <script src="assets/js/main.js"></script>
-    <script
-        src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/chart.min.js"></script>
-        <script src="assets/js/bs-charts.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/chart.min.js"></script>
+  <script src="assets/js/bs-charts.js"></script>
 </body>
 
 </html>
