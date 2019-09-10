@@ -16,6 +16,4 @@
 - Perfil de usuario 
 - Dos fichas de ejemplos de actividad 
 
-Se puede observar estos prototipos en la carpeta denominada HTML, en ella se encuentra cada página con su respectiva derivación a los distintos enlaces.
-
-También en el archivo principal, se encuentran los distintos diseños utilizados en la creación de estos prototipos en formato .bsdesign para poder hacer modificaciones a través de Bootstrap.
+En el archivo principal, se encuentran los distintos diseños utilizados en la creación de estos prototipos en formato .bsdesign para poder hacer modificaciones a través de Bootstrap, también se encuentran los HTML finales correspondientes a los prototipos de está tarea, los cuales son: LandingPage.html, Perfil,html, Ficha1.html y Ficha2.html, donde estos últimos corresponden a dos ejemplos de ficha de actividad.
